@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <!-- Ambient Background Blobs for Premium Glassmorphism Look -->
+    <!-- Ambient Background Blobs for Premium Light Glassmorphism Look -->
     <div class="bg-blob blob-turquoise"></div>
     <div class="bg-blob blob-celeste"></div>
 
@@ -26,9 +26,9 @@
             <li><a href="#filosofia" class="nav-link">Nuestra Filosofía</a></li>
             <li><a href="#como-trabajamos" class="nav-link">Cómo trabajamos</a></li>
             <li><a href="#casos-reales" class="nav-link">Casos Reales</a></li>
+            <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
             <li><a href="#servicios" class="nav-link">Servicios</a></li>
             <li><a href="#faq" class="nav-link">Preguntas Frecuentes</a></li>
-            <li class="nav-cta-mobile"><a href="#diagnostico" class="btn btn-primary">Diagnóstico Gratis</a></li>
           </ul>
         </nav>
 
@@ -107,7 +107,7 @@
     </section>
 
     <!-- Cómo Trabajamos -->
-    <section id="como-trabajamos" style="background-color: #060910;">
+    <section id="como-trabajamos" class="alt-bg">
       <div class="container">
         <div class="section-header">
           <span class="section-subtitle">Cómo trabajamos</span>
@@ -188,7 +188,7 @@
     </section>
 
     <!-- Bloque de CTA Unificado [FASE 3] -->
-    <section class="cta-section" style="background-color: #060910;">
+    <section class="cta-section alt-bg">
       <div class="container">
         <div class="cta-banner">
           <h2 class="cta-title">¿Quieres saber qué puede hacer la IA por tu negocio?</h2>
@@ -198,8 +198,48 @@
       </div>
     </section>
 
+    <!-- Sección Sobre Mí (Perfil de Aitor Tendero) -->
+    <section id="sobre-mi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Sobre Mí</span>
+          <h2 class="section-title">Detrás de <span class="text-turquoise">IAtot</span>.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-image-container">
+            <img src="/aitor.png" alt="Aitor Tendero — Fundador y Consultor de IAtot" class="about-image" />
+          </div>
+          <div class="about-content">
+            <h3 class="section-title" style="font-size: 2rem;">Aitor Tendero</h3>
+            <div class="about-text">
+              <p>
+                Hola, soy **Aitor Tendero**. Como consultor y desarrollador tecnológico, fundé IAtot con una misión clara: ayudar a pequeños negocios, gestorías, clínicas y autónomos a liberarse de las tareas repetitivas mediante automatización inteligente e Inteligencia Artificial.
+              </p>
+              <p>
+                Mi enfoque no consiste en venderte herramientas caras ni complicarte con tecnicismos que no necesitas. Diseño e implemento soluciones llave en mano que se adaptan a tu ritmo de trabajo diario, ahorrándote horas de gestión y garantizando un retorno de inversión real desde el primer día.
+              </p>
+            </div>
+            <div class="about-stats">
+              <div class="stat-item">
+                <h4>+50</h4>
+                <p>Flujos automatizados</p>
+              </div>
+              <div class="stat-item">
+                <h4>+100</h4>
+                <p>Horas semanales ahorradas</p>
+              </div>
+              <div class="stat-item">
+                <h4>100%</h4>
+                <p>A medida</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Servicios diseñados para resultados [FASE 2] -->
-    <section id="servicios">
+    <section id="servicios" class="alt-bg">
       <div class="container">
         <div class="section-header">
           <span class="section-subtitle">Soluciones</span>
@@ -259,7 +299,7 @@
     </section>
 
     <!-- Formulario de Diagnóstico / Contacto -->
-    <section id="diagnostico" style="background-color: #060910;">
+    <section id="diagnostico">
       <div class="container contact-grid">
         <div class="contact-info">
           <h2 class="contact-info-title">Impulsa tu negocio con <span class="text-turquoise">automatizaciones</span>.</h2>
@@ -292,7 +332,7 @@
           <form id="diagnostic-form">
             <div class="form-group">
               <label for="name" class="form-label">Tu Nombre</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Aitor Tendeiro" required />
+              <input type="text" id="name" name="name" class="form-input" placeholder="Aitor Tendero" required />
             </div>
             <div class="form-group-row">
               <div class="form-group">
@@ -319,7 +359,7 @@
     </section>
 
     <!-- Preguntas Frecuentes (FAQ) [FASE 4] -->
-    <section id="faq">
+    <section id="faq" class="alt-bg">
       <div class="container">
         <div class="section-header">
           <span class="section-subtitle">Preguntas Frecuentes</span>
@@ -398,7 +438,7 @@
           <ul class="footer-links">
             <li><a href="#servicios" class="footer-link">Servicios</a></li>
             <li><a href="#como-trabajamos" class="footer-link">Cómo trabajamos</a></li>
-            <li><a href="#filosofia" class="footer-link">Sobre IAtot</a></li>
+            <li><a href="#sobre-mi" class="footer-link">Sobre Mí</a></li>
             <li><a href="#diagnostico" class="footer-link">Diagnóstico</a></li>
             <li><a href="#diagnostico" class="footer-link">Contacto</a></li>
           </ul>

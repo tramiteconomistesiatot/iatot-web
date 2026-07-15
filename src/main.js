@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Form Submission and Success Modal
+  // 4. Form Submission and N8N Webhook Integration
   const contactForm = document.getElementById('diagnostic-form');
   const successModal = document.getElementById('success-modal');
   const closeModalBtn = document.getElementById('close-modal');
@@ -64,16 +64,42 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Simulate form submission
       const formData = new FormData(contactForm);
-      const name = formData.get('name');
-      const email = formData.get('email');
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        businessType: formData.get('business-type'),
+        message: formData.get('message'),
+        submittedAt: new Date().toISOString()
+      };
       
-      console.log(`Diagnostic requested by: ${name} (${email})`);
+      console.log('Diagnostic requested:', payload);
       
-      // Show success modal
+      // Show success modal instantly for high responsiveness
       successModal.classList.add('active');
       document.body.classList.add('overflow-hidden');
+      
+      // Send data to N8N webhook in the background
+      const N8N_WEBHOOK_URL = 'https://automatizaciones-n8n.rffba8.easypanel.host/webhook/iatot-leads';
+      
+      fetch(N8N_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('N8N Webhook responded with an error status: ' + response.status);
+        }
+        console.log('Lead successfully sent to N8N webhook.');
+      })
+      .catch(error => {
+        // Log error but do not disrupt user experience (modal is already open)
+        console.error('Failed to submit lead to N8N webhook:', error);
+      });
       
       // Reset form
       contactForm.reset();
@@ -104,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 100;
+      const sectionTop = current.offsetTop - 120;
       const sectionId = current.getAttribute('id');
       const navItem = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
       
