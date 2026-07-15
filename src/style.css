@@ -266,6 +266,10 @@ section.alt-bg {
   align-items: center;
 }
 
+.nav-cta-mobile {
+  display: none;
+}
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -1163,6 +1167,10 @@ section.alt-bg {
 
   .nav-cta-mobile .btn {
     width: 100%;
+  }
+  
+  .nav-cta {
+    display: none;
   }
   
   .hamburger {
